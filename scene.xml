@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mlt LC_NUMERIC="C" producer="main_bin" version="7.12.0" root="/home/kash">
+  <profile description="HD 1080p 25 fps" width="1920" height="1080" progressive="1" sample_aspect_num="1" sample_aspect_den="1" display_aspect_num="16" display_aspect_den="9" frame_rate_num="25" frame_rate_den="1" colorspace="709"/>
+  <producer id="producer0" in="0" out="150">
+    <property name="resource">C:\xampp\htdocs\proj\chatgpt-video-generator/images/e9b61e8d32782ab8777c8a8a61757618/img-9U9k2GmkfG7xMgZuKGgBwPKT.png</property>
+    <property name="length">151</property>
+  </producer>
+  <producer id="producer1" in="0" out="150">
+    <property name="resource">C:\xampp\htdocs\proj\chatgpt-video-generator/images/e9b61e8d32782ab8777c8a8a61757618/img-R7WSQjz8S4Q9wdkp5YWLS4xM.png</property>
+    <property name="length">151</property>
+  </producer>
+  <producer id="producer2" in="0" out="150">
+    <property name="resource">C:\xampp\htdocs\proj\chatgpt-video-generator/images/e9b61e8d32782ab8777c8a8a61757618/img-r9D0vbzQVkI9WrqaLoD5BWlo.png</property>
+    <property name="length">151</property>
+  </producer>
+  <playlist id="playlist0">
+    <entry producer="producer0" in="0" out="150"/>
+    <entry producer="producer1" in="0" out="150"/>
+    <entry producer="producer2" in="0" out="150"/>
+  </playlist>
+  <tractor id="tractor0">
+    <multitrack>
+      <track producer="playlist0"/>
+    </multitrack>
+  </tractor>
+  <producer id="voiceover">
+    <property name="resource">C:\xampp\htdocs\proj\chatgpt-video-generator/voices/e9b61e8d32782ab8777c8a8a61757618.mp3</property>
+  </producer>
+  <playlist id="voiceover_playlist">
+    <entry producer="voiceover"/>
+  </playlist>
+  <tractor id="tractor1">
+    <multitrack>
+      <track producer="tractor0"/>
+      <track producer="voiceover_playlist"/>
+    </multitrack>
+  </tractor>
+</mlt>

@@ -1,0 +1,16 @@
+FROM composer:2.1
+
+COPY . /app
+
+WORKDIR /app
+
+RUN composer install
+
+RUN composer.json
+
+FROM php:8.1-apache
+
+RUN apk add --no-cache ffmpeg
+
+COPY . /var/www/html
+
